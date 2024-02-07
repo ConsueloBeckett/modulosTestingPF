@@ -1,4 +1,4 @@
-import userModel from "./models/User.js";
+import userModel from "./model/user.model.js";
 
 
 export default class Users {
@@ -13,7 +13,7 @@ export default class Users {
 
     save = (doc) =>{
         return userModel.create(doc);
-    }
+    } 
 
     update = (id,doc) =>{
         return userModel.findByIdAndUpdate(id,{$set:doc})
