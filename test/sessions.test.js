@@ -1,7 +1,6 @@
 import chai from 'chai';
 import { describe } from 'mocha';
 import supertest from 'supertest';
-// Importa el controlador de sesiones
 import sessionsController from '../src/controllers/sessions.controller.js';
 
 const expect = chai.expect;
@@ -25,10 +24,10 @@ describe("Testing PF Sessions", () => {
         console.log(ok);
         console.log(_body);
 
-        // Agrega aserciones según la lógica de tu aplicación
+        
         expect(statusCode).to.equal(200);
         expect(ok).to.equal(true);
-        // Agrega más aserciones según la respuesta esperada
+        
     });
 
     // TEST2
@@ -48,21 +47,17 @@ describe("Testing PF Sessions", () => {
         console.log(ok);
         console.log(_body);
 
-        // Agrega aserciones según la lógica de tu aplicación
         expect(statusCode).to.equal(200);
         expect(ok).to.equal(true);
-        // Agrega más aserciones según la respuesta esperada
     });
 
     // TEST3
     it("EP GET /api/sessions/current", async () => {
-        // Simula tener un usuario autenticado (puedes ajustar según tu lógica)
         const authenticatedUser = {
             username: "testUser",
             password: "testPassword"
         };
 
-        // Realiza la autenticación simulada antes de hacer la solicitud GET
         await sessionsController.login({ body: authenticatedUser });
 
         const {
@@ -75,9 +70,7 @@ describe("Testing PF Sessions", () => {
         console.log(ok);
         console.log(_body);
 
-        // Agrega aserciones según la lógica de tu aplicación
         expect(statusCode).to.equal(200);
         expect(ok).to.equal(true);
-        // Agrega más aserciones según la respuesta esperada
     });
 });
